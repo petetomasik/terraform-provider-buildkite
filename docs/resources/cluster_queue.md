@@ -3,12 +3,12 @@
 page_title: "buildkite_cluster_queue Resource - terraform-provider-buildkite"
 subcategory: ""
 description: |-
-  A Cluster Queue (foo) is a queue belonging to a specific Cluster for its Agents to target builds on.
+  A Cluster Queue is a queue belonging to a specific Cluster for its Agents to target builds on.
 ---
 
 # buildkite_cluster_queue (Resource)
 
-A Cluster Queue (foo) is a queue belonging to a specific Cluster for its Agents to target builds on.
+A Cluster Queue is a queue belonging to a specific Cluster for its Agents to target builds on.
 
 ## Example Usage
 
