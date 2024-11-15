@@ -13,7 +13,8 @@ docs_changes="$?"
 
 if [ "${docs_changes:-0}" -ne 0 ] ; then
 	echo "+++ :bk-status-failed: Documentation changes detected!!!"
-	git status --short
+	git status --short | tee -a git_diff_output
+	printf '```git status --short\n%b\n```' "$(cat git_diff_output)" | buildkite-agent annotate --style info
 fi
 
 exit "$docs_changes"
