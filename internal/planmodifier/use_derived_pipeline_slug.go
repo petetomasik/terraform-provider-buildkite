@@ -50,12 +50,16 @@ func (m useDerivedPipelineSlugModifier) PlanModifyString(ctx context.Context, re
 		// Return unknown if name is changing (re-generate slug from API)
 		if planValueName != stateValueName {
 			resp.PlanValue = types.StringUnknown()
+			return
 		}
 		// Return unknown if slug not defined and previous slug source not API (re-generate slug from API)
 		if slugSourceVal != "api" {
 			resp.PlanValue = types.StringUnknown()
+			return
 		}
-		return
+
+		// Default to value in state
+		resp.PlanValue = req.StateValue
 	}
 }
 
